@@ -28,6 +28,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <time.h>
+#include <signal.h>
 #include "config.h"
 #include "common_utils.h"
 #include "cards.h"
@@ -35,6 +36,10 @@
 #define PORT PORT_DIMOV
 #endif
 
+void interrupt_handler(int);
+void disconnect(bool);
+void refill();
+void clear_cards();
 void print_cards();
 int calculate_score();
 void receive_message(int clientSocket,char** name);

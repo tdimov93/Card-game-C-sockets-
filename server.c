@@ -355,6 +355,7 @@ void end_round(int socket, char** msg) {
 		sigempty = TRUE;
 	}
 	players[find_index(players, socket)].isempty = TRUE;
+	printf("msg : %s\n", *msg);
 }
 
 void update_score(int socket, char** msg) {
